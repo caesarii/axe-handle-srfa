@@ -22,3 +22,5 @@ if(require.main === module) {
     console.log(binarySearch(list, 4))
     console.log(binarySearch(list, 5))
 }
+
+moudle.exports = binarySearch
