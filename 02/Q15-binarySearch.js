@@ -9,7 +9,9 @@
 // 递归树: 二分查找不会对所有两分产生的数组进行递归, 每次只递归其中一个
 const binarySearch = (A, target, p = 0, r = A.length -  1) => {
     const q = Math.floor((p + r) / 2)
-    console.log(p, q, r)
+    if (A[0] > target || A[A.length - 1] < target) {
+        return -1
+    }
 
     if (A[q] === target) {
         return q
@@ -27,7 +29,7 @@ if(require.main === module) {
     // console.log(binarySearch(list, 2))
     // console.log(binarySearch(list, 3))
     // console.log(binarySearch(list, 4))
-    console.log(binarySearch(list, 8))
+    console.log(binarySearch(list, 18))
 }
 
 module.exports = binarySearch
