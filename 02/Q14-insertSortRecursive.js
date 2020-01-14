@@ -7,6 +7,7 @@ const insertSort = (A, j = A.length - 1, ) => {
         return
     }
     
+    // 循环改为递归
     insertSort(A, j - 1)
 
     const key = A[j]
