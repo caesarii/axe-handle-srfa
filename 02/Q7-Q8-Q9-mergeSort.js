@@ -31,6 +31,10 @@ const merge = (A, p, q, r) => {
     }
 }
 
+// 分治法
+// 分解: 将对 A[p=0, r=length-1] 的排序分解为对 A[p, q] 和 A[q + 1, r] 两个数组的排序, 两个数组的长度为 length / 2, 对子数组继续二分, 直至 p == r, length = 1
+// 解决: 当 p == r 时可以将两个长度为 1 的数组进行合并, 形成长度为 2 的已排序数组, 然后继续合并长度为 2 的数组, 直至数组长度为 length / 2
+// 合并: 合并两个长度 length / 2 的已排序数组, 得到已排序的 A
 const mergeSort = (A, p = 0, r = A.length - 1) => {
     if (p < r) {
         const q = Math.floor((p + r) / 2)
