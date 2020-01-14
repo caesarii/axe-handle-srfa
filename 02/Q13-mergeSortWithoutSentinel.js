@@ -42,14 +42,14 @@ const mergeSort = (A, p = 0, r = A.length - 1) => {
 
 
 if(require.main === module) {
-    const list = [1, 3, 5, 7, 9, 2, 4, 6, 8]
-    merge(list, 0, 4, list.length - 1)
+    const list = [1, 3, 5, 7, 9, 10, 2, 4, 6, 8]
+    merge(list, 0, 5, list.length - 1)
     console.log(list)
 
-     const list1 = [38, 545, 6, 9, 324, 1, 4, 564]
-     const list2 = [5, 2, 4 , 7]
-     mergeSort(list1)
-     console.log(list1)
+    //  const list1 = [38, 545, 6, 9, 324, 1, 4, 564]
+    //  const list2 = [5, 2, 4 , 7]
+    //  mergeSort(list1)
+    //  console.log(list1)
 }
 
 module.exports = merge
