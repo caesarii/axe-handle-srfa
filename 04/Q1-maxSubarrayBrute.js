@@ -1,5 +1,5 @@
 
-
+// 遍历数组, 求从每个元素开始的最大和
 const maxSubarrayBrute = (A) => {
     let max = -Infinity
     let low = 0
@@ -15,7 +15,7 @@ const maxSubarrayBrute = (A) => {
             }
         }
     }
-    return [max, low, high]
+    return [low, high, max]
 }
 
 if (require.main === module) {
