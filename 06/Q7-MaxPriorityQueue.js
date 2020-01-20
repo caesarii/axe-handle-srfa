@@ -69,6 +69,7 @@ class MaxPriorityQueue extends MaxHeap {
 
         // 将最大值替换为堆中的最后一个元素
         this.list[0] = this.list[this.size - 1]
+        this.length -= 1
         this.size = this.size - 1
         // 重建最大堆
         this.maxHeapify(0)
@@ -134,9 +135,9 @@ if(require.main === module) {
     // log('maximum', queue.maximum())
     // 84
     // extractMax
-    // log('extractMax', queue.extractMax())
+    log('extractMax', queue.extractMax())
     // 84
-    // log('删除最大值的优先队列', queue.list)
+    log('删除最大值的优先队列', queue.list)
     // [22, 10, 19, 9, 3, 17, 6, 5]
 
     // increaseKey
@@ -152,14 +153,14 @@ if(require.main === module) {
         { key: 4, value: '8' },
         { key: 1, value: '9' }
     ]
-    const queue2 = new MaxPriorityQueue(list2)
+    // const queue2 = new MaxPriorityQueue(list2)
     // 将 { key: 4, value: '8' } 的 key 增加到 15
     // log('increaseKey', queue2.increaseKey(8, 15))
     // 16 15 10 14 7 9 3 2 8 1
 
     // insert
     const node = { value: '10', key: 18}
-    log('insert',  queue2.insert(node))
+    // log('insert',  queue2.insert(node))
     // 18 16 10 8 14 9 3 2 4 1 7
    
 }
