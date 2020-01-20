@@ -1,6 +1,6 @@
 
 const log = console.log
-const MaxHeap = require('./Q6-MaxHeap') 
+const MaxHeap = require('./Q5-MaxHeap') 
 
 // 用于从恢复 A[i] 树的最小堆性质
 const minHeapify = (i, list) => {

@@ -1,4 +1,4 @@
-const MaxHeap = require('./Q6-MaxHeap')
+const MaxHeap = require('./Q5-MaxHeap')
 const log = console.log 
 
 // 用于从恢复 A[i] 树的最大堆性质
@@ -38,3 +38,5 @@ if(require.main === module) {
     log('maxHeapify 3', maxHeapify(2, [27, 17, 3, 16, 13, 10, 1, 5, 7, 12, 4, 8, 9, 0 ]))
     // 27 17 10 16 13 9 1 5 7 12 4 8 3 0
 }
+
+module.exports = maxHeapify
