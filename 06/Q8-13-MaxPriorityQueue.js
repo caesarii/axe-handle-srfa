@@ -14,7 +14,7 @@ class MaxHeap {
         for(let i = Math.floor((this.list.length) / 2) + 1; i > -1; i--) {
             this.maxHeapify(i);
         }
-        // log('maxHeap', this.list)
+        log('maxHeap', this.list)
     }
 
     maxHeapify (i) {
@@ -110,7 +110,19 @@ class MaxPriorityQueue extends MaxHeap {
         // 将新节点的 key 设置为目标值
         this.increaseKey(this.size - 1, node.key)
         return this.list
-    }   
+    }  
+    
+    delete(i) {
+        // 用最后一个元素覆盖要删除的元素
+        this.list[i] = this.list[this.size - 1]
+        // 删除最后一个元素
+        this.list.length -= 1
+        this.size = this.size - 1
+        // 重建最大堆
+        this.maxHeapify(i)
+
+        return this.list
+    }
 }
 
 if(require.main === module) {
@@ -131,13 +143,13 @@ if(require.main === module) {
     // [ 84, 22, 19, 10, 3, 17, 6, 5, 9 ]
 
     // maximum
-    const queue = new MaxPriorityQueue(list)
+    // const queue = new MaxPriorityQueue(list)
     // log('maximum', queue.maximum())
     // 84
     // extractMax
-    log('extractMax', queue.extractMax())
+    // log('extractMax', queue.extractMax())
     // 84
-    log('删除最大值的优先队列', queue.list)
+    // log('删除最大值的优先队列', queue.list)
     // [22, 10, 19, 9, 3, 17, 6, 5]
 
     // increaseKey
@@ -153,7 +165,7 @@ if(require.main === module) {
         { key: 4, value: '8' },
         { key: 1, value: '9' }
     ]
-    // const queue2 = new MaxPriorityQueue(list2)
+    const queue2 = new MaxPriorityQueue(list2)
     // 将 { key: 4, value: '8' } 的 key 增加到 15
     // log('increaseKey', queue2.increaseKey(8, 15))
     // 16 15 10 14 7 9 3 2 8 1
@@ -162,6 +174,10 @@ if(require.main === module) {
     const node = { value: '10', key: 18}
     // log('insert',  queue2.insert(node))
     // 18 16 10 8 14 9 3 2 4 1 7
+
+    // delete 10
+    log('delete', queue2.delete(2))
+    // 16 14 9 8 7 1 3 2 4 1
    
 }
 
