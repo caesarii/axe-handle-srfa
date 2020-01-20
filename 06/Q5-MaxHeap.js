@@ -47,7 +47,7 @@ class MaxHeap {
 
 
     static parent (i) {
-        return Math.floor((i) / 2)
+        return Math.floor((i - 1) / 2)
     }
 
     static left (i) {
