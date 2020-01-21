@@ -181,4 +181,4 @@ if(require.main === module) {
    
 }
 
-module.exports = MaxHeap
+module.exports = MaxPriorityQueue
