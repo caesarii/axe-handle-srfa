@@ -49,6 +49,9 @@ class Queue {
 
     // 测试
     print () {
+        if(this.empty()) {
+            return []
+        }
         if (this.head < this.tail) {
             return this.list.slice(this.head, this.tail)
         } else {
