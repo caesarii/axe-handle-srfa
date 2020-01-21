@@ -85,5 +85,6 @@ if(require.main === module) {
     // 测试5: underflow
     s1.dequeue()
     // Error: underflow
-
 }
+
+module.exports = Queue

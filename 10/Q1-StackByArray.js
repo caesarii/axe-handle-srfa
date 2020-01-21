@@ -20,9 +20,13 @@ class Stack {
         return this.top === -1
     }
 
+    full () {
+        return this.top > this.size - 1
+    }
+
     push (x) {
         this.top ++
-        if (this.top > this.size - 1) {
+        if (this.full()) {
             throw new Error('overflow')
         }
         this.list[this.top] = x
@@ -76,3 +80,5 @@ if(require.main === module) {
     // Error: underflow
 
 }
+
+module.exports = Stack
