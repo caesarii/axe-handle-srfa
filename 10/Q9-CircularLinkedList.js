@@ -30,13 +30,18 @@ class LinkedList {
     }
 
     delete(k) {
-
-
         let x = this.sentinel
         while(x.next != this.sentinel && x.next.key !== k) {
             x = x.next
         }
         x.next = x.next.next
+    }
+
+    // 删除第一个元素
+    deleteFirst () {
+        const k = this.sentinel.next
+        this.sentinel.next = this.sentinel.next.next
+        return k
     }
     
     print() {
@@ -69,3 +74,5 @@ if(require.main = module) {
     // 0 1 3
     
 }
+
+module.exports = LinkedList
